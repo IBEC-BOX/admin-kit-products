@@ -2,10 +2,10 @@
 
 namespace AdminKit\Products;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use AdminKit\Products\Commands\ProductsCommand;
 use AdminKit\Products\Providers\RouteServiceProvider;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class ProductsServiceProvider extends PackageServiceProvider
 {

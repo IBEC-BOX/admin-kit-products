@@ -2,8 +2,8 @@
 
 namespace AdminKit\Products\UI\Filament\Resources\ProductResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use AdminKit\Products\UI\Filament\Resources\ProductResource;
+use Filament\Resources\Pages\CreateRecord;
 
 class CreateProduct extends CreateRecord
 {

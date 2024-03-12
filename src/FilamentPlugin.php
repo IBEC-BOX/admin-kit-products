@@ -2,9 +2,9 @@
 
 namespace AdminKit\Products;
 
+use AdminKit\Products\UI\Filament\Resources\ProductResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use AdminKit\Products\UI\Filament\Resources\ProductResource;
 
 class FilamentPlugin implements Plugin
 {

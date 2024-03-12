@@ -2,9 +2,9 @@
 
 namespace AdminKit\Products\UI\Filament\Resources\ProductResource\Pages;
 
+use AdminKit\Products\UI\Filament\Resources\ProductResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use AdminKit\Products\UI\Filament\Resources\ProductResource;
 
 class EditProduct extends EditRecord
 {

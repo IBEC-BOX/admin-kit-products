@@ -3,9 +3,9 @@
 namespace AdminKit\Products\Models;
 
 use AdminKit\Core\Abstracts\Models\AbstractModel;
+use AdminKit\Products\Database\Factories\ProductFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Translatable\HasTranslations;
-use AdminKit\Products\Database\Factories\ProductFactory;
 
 class Product extends AbstractModel
 {
