@@ -2,13 +2,13 @@
 
 namespace AdminKit\Products\UI\Filament\Resources;
 
-use Filament\Forms;
-use Filament\Tables;
-use Filament\Resources\Resource;
-use AdminKit\Products\Models\Product;
-use Filament\Forms\Components\Tabs\Tab;
 use AdminKit\Core\Forms\Components\TranslatableTabs;
+use AdminKit\Products\Models\Product;
 use AdminKit\Products\UI\Filament\Resources\ProductResource\Pages;
+use Filament\Forms;
+use Filament\Forms\Components\Tabs\Tab;
+use Filament\Resources\Resource;
+use Filament\Tables;
 
 class ProductResource extends Resource
 {

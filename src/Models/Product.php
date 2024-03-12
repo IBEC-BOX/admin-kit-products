@@ -2,15 +2,15 @@
 
 namespace AdminKit\Products\Models;
 
-use Spatie\MediaLibrary\HasMedia;
-use Illuminate\Support\Collection;
-use Spatie\Translatable\HasTranslations;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use AdminKit\Core\Abstracts\Models\AbstractModel;
+use AdminKit\Products\Database\Factories\ProductFactory;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Collection;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use AdminKit\Products\Database\Factories\ProductFactory;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * @property-read string $title
