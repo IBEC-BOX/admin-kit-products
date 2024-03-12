@@ -2,12 +2,13 @@
 
 namespace AdminKit\Products\UI\Filament\Resources;
 
-use AdminKit\Core\Forms\Components\TranslatableTabs;
-use AdminKit\Products\Models\Product;
-use AdminKit\Products\UI\Filament\Resources\ProductResource\Pages;
 use Filament\Forms;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Resources\Resource;
+use AdminKit\Products\Models\Product;
+use Filament\Forms\Components\Tabs\Tab;
+use AdminKit\Core\Forms\Components\TranslatableTabs;
+use AdminKit\Products\UI\Filament\Resources\ProductResource\Pages;
 
 class ProductResource extends Resource
 {
@@ -19,10 +20,21 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                TranslatableTabs::make(fn ($locale) => Forms\Components\Tabs\Tab::make($locale)->schema([
-                    Forms\Components\TextInput::make('title')
-                        ->label(__('admin-kit-products::products.resource.title'))
-                        ->required($locale === app()->getLocale()),
+                Forms\Components\SpatieMediaLibraryFileUpload::make('photo')
+                    ->label(__('admin-kit-products::products.resource.photo'))
+                    ->collection('photo')
+                    ->required(),
+                TranslatableTabs::make(fn ($locale) => Tab::make($locale)->schema([
+                    Forms\Components\TextInput::make('title.'.$locale)
+                        ->label(__('admin-kit-products::products.resource.name'))
+                        ->required(),
+                    Forms\Components\RichEditor::make('text.'.$locale)
+                        ->label(__('admin-kit-products::products.resource.text'))
+                        ->required(),
+                    Forms\Components\SpatieMediaLibraryFileUpload::make('attachments.'.$locale)
+                        ->label(__('admin-kit-products::products.resource.attachments'))
+                        ->collection('attachments.'.$locale)
+                        ->multiple(),
                 ])),
             ])
             ->columns(1);
@@ -33,14 +45,18 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id')
-                    ->label(__('admin-kit-products::products.resource.id'))
-                    ->sortable(),
+                    ->label(__('admin-kit-products::products.resource.id')),
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('photo')
+                    ->label(__('admin-kit-products::products.resource.photo'))
+                    ->width(50)
+                    ->height(50)
+                    ->circular(),
                 Tables\Columns\TextColumn::make('title')
-                    ->label(__('admin-kit-products::products.resource.title')),
+                    ->label(__('admin-kit-products::products.resource.name'))
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label(__('admin-kit-products::products.resource.created_at')),
             ])
-            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])
@@ -51,7 +67,8 @@ class ProductResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ])
-            ->defaultSort('id', 'desc');
+            ->reorderable('sort')
+            ->defaultSort('sort');
     }
 
     public static function getRelations(): array
@@ -76,11 +93,6 @@ class ProductResource extends Resource
     }
 
     public static function getPluralLabel(): ?string
-    {
-        return __('admin-kit-products::products.resource.plural_label');
-    }
-
-    public static function getNavigationGroup(): ?string
     {
         return __('admin-kit-products::products.resource.plural_label');
     }

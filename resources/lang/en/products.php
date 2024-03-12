@@ -6,7 +6,10 @@ return [
         'plural_label' => 'Products',
 
         'id' => 'ID',
-        'title' => 'Title',
+        'photo' => 'Photo',
+        'name' => 'Name',
+        'text' => 'Text',
+        'attachments' => 'Attachments',
 
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',

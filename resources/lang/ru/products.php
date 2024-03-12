@@ -2,11 +2,14 @@
 
 return [
     'resource' => [
-        'label' => 'Product',
-        'plural_label' => 'Products',
+        'label' => 'Продукт',
+        'plural_label' => 'Продукция',
 
         'id' => 'ID',
-        'title' => 'Title',
+        'photo' => 'Фото',
+        'name' => 'Название',
+        'text' => 'Текст',
+        'attachments' => 'Вложения',
 
         'created_at' => 'Создан',
         'updated_at' => 'Обновлен',

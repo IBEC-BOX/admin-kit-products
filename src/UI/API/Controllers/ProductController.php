@@ -5,16 +5,17 @@ declare(strict_types=1);
 namespace AdminKit\Products\UI\API\Controllers;
 
 use AdminKit\Products\Models\Product;
+use AdminKit\Products\UI\API\DTO\ProductDTO;
+use Spatie\LaravelData\PaginatedDataCollection;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(): PaginatedDataCollection
     {
-        return Product::all();
-    }
+        $products = Product::query()
+            ->orderBy('sort')
+            ->paginate();
 
-    public function show(int $id)
-    {
-        return Product::findOrFail($id);
+        return ProductDTO::collection($products);
     }
 }
