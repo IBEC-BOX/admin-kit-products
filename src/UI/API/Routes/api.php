@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use VendorName\Skeleton\UI\API\Controllers\SingleNameController;
+use AdminKit\Products\UI\API\Controllers\ProductController;
 
-Route::get('/skeleton_without_prefix', [SingleNameController::class, 'index']);
-Route::get('/skeleton_without_prefix/{id}', [SingleNameController::class, 'show']);
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/{id}', [ProductController::class, 'show']);
