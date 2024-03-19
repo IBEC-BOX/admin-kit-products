@@ -23,7 +23,10 @@ class ProductResource extends Resource
                 Forms\Components\SpatieMediaLibraryFileUpload::make('photo')
                     ->label(__('admin-kit-products::products.resource.photo'))
                     ->collection('photo')
-                    ->required(),
+                    ->image()
+                    ->required()
+                    ->optimize('webp')
+                    ->resize(30),
                 TranslatableTabs::make(fn ($locale) => Tab::make($locale)->schema([
                     Forms\Components\TextInput::make('title.'.$locale)
                         ->label(__('admin-kit-products::products.resource.name'))
@@ -34,7 +37,10 @@ class ProductResource extends Resource
                     Forms\Components\SpatieMediaLibraryFileUpload::make('attachments.'.$locale)
                         ->label(__('admin-kit-products::products.resource.attachments'))
                         ->collection('attachments.'.$locale)
-                        ->multiple(),
+                        ->multiple()
+                        ->image()
+                        ->optimize('webp')
+                        ->resize(30),
                 ])),
             ])
             ->columns(1);
