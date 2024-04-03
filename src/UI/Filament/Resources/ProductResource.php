@@ -37,10 +37,7 @@ class ProductResource extends Resource
                     Forms\Components\SpatieMediaLibraryFileUpload::make('attachments.'.$locale)
                         ->label(__('admin-kit-products::products.resource.attachments'))
                         ->collection('attachments.'.$locale)
-                        ->multiple()
-                        ->image()
-                        ->optimize('webp')
-                        ->resize(30),
+                        ->multiple(),
                 ])),
             ])
             ->columns(1);
