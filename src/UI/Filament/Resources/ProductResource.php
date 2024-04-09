@@ -24,9 +24,7 @@ class ProductResource extends Resource
                     ->label(__('admin-kit-products::products.resource.photo'))
                     ->collection('photo')
                     ->image()
-                    ->required()
-                    ->optimize('webp')
-                    ->resize(30),
+                    ->required(),
                 TranslatableTabs::make(fn ($locale) => Tab::make($locale)->schema([
                     Forms\Components\TextInput::make('title.'.$locale)
                         ->label(__('admin-kit-products::products.resource.name'))
