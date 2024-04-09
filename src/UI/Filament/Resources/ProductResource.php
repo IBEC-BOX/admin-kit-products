@@ -50,6 +50,7 @@ class ProductResource extends Resource
                     ->label(__('admin-kit-products::products.resource.id')),
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('photo')
                     ->label(__('admin-kit-products::products.resource.photo'))
+                    ->collection('photo')
                     ->width(50)
                     ->height(50)
                     ->circular(),
