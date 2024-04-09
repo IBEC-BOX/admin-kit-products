@@ -30,10 +30,9 @@ class ProductResource extends Resource
                 TranslatableTabs::make(fn ($locale) => Tab::make($locale)->schema([
                     Forms\Components\TextInput::make('title.'.$locale)
                         ->label(__('admin-kit-products::products.resource.name'))
-                        ->required(),
+                        ->required($locale === app()->getLocale()),
                     Forms\Components\RichEditor::make('text.'.$locale)
-                        ->label(__('admin-kit-products::products.resource.text'))
-                        ->required(),
+                        ->label(__('admin-kit-products::products.resource.text')),
                     Forms\Components\SpatieMediaLibraryFileUpload::make('attachments.'.$locale)
                         ->label(__('admin-kit-products::products.resource.attachments'))
                         ->collection('attachments.'.$locale)
