@@ -4,10 +4,13 @@ namespace AdminKit\Products\UI\API\DTO;
 
 use AdminKit\Products\Models\Product;
 use Illuminate\Support\Collection;
+use Spatie\LaravelData\Concerns\WithDeprecatedCollectionMethod;
 use Spatie\LaravelData\Data;
 
 class ProductDTO extends Data
 {
+    use WithDeprecatedCollectionMethod;
+
     public function __construct(
         public string $title,
         public string $text,
