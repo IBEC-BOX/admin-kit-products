@@ -1,6 +1,7 @@
 {
     "name": "ibecsystems/admin-kit-products",
     "description": "Products package for AdminKit",
+    "type": "admin-kit-package",
     "keywords": [
         "ibec-box",
         "laravel",
