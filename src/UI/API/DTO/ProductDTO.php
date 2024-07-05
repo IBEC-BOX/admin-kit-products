@@ -16,8 +16,7 @@ class ProductDTO extends Data
         public string $text,
         public string $photo,
         public Collection $attachments,
-    ) {
-    }
+    ) {}
 
     public static function fromModel(Product $product): ProductDTO
     {

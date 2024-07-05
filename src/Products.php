@@ -2,6 +2,4 @@
 
 namespace AdminKit\Products;
 
-class Products
-{
-}
+class Products {}
