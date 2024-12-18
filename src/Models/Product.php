@@ -55,6 +55,6 @@ class Product extends AbstractModel implements HasMedia
 
     protected static function newFactory(): ProductFactory
     {
-        return new ProductFactory();
+        return new ProductFactory;
     }
 }
