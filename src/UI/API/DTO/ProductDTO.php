@@ -14,7 +14,7 @@ class ProductDTO extends Data
     public function __construct(
         public string $title,
         public string $text,
-        public string $photo,
+        public ?string $photo,
         public Collection $attachments,
     ) {}
 
