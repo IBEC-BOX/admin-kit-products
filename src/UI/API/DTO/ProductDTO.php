@@ -15,6 +15,7 @@ class ProductDTO extends Data
         public string $title,
         public string $text,
         public ?string $photo,
+        public array $details,
         public Collection $attachments,
     ) {}
 
@@ -24,6 +25,7 @@ class ProductDTO extends Data
             title: $product->title,
             text: $product->text,
             photo: $product->photo,
+            details: $product->details ?? [],
             attachments: $product->attachments,
         );
     }

@@ -24,7 +24,8 @@ class ProductResource extends Resource
                     ->label(__('admin-kit-products::products.resource.photo'))
                     ->collection('photo')
                     ->image()
-                    ->optimize('webp'),
+                    ->optimize('webp')
+                    ->required(),
                 TranslatableTabs::make(fn ($locale) => Tab::make($locale)->schema([
                     Forms\Components\TextInput::make('title.'.$locale)
                         ->label(__('admin-kit-products::products.resource.name'))
@@ -35,6 +36,15 @@ class ProductResource extends Resource
                         ->label(__('admin-kit-products::products.resource.attachments'))
                         ->collection('attachments.'.$locale)
                         ->multiple(),
+                    Forms\Components\Repeater::make('details.'.$locale)
+                        ->label('Детали')
+                        ->columns()
+                        ->schema([
+                            Forms\Components\TextInput::make('title')
+                                ->label('Заголовок'),
+                            Forms\Components\TextInput::make('description')
+                                ->label('Описание'),
+                        ]),
                 ])),
             ])
             ->columns(1);
