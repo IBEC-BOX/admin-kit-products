@@ -31,11 +31,13 @@ class Product extends AbstractModel implements HasMedia
         'title',
         'text',
         'sort',
+        'details',
     ];
 
     protected array $translatable = [
         'title',
         'text',
+        'details',
     ];
 
     public function photo(): Attribute

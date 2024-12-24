@@ -36,6 +36,15 @@ class ProductResource extends Resource
                         ->label(__('admin-kit-products::products.resource.attachments'))
                         ->collection('attachments.'.$locale)
                         ->multiple(),
+                    Forms\Components\Repeater::make('details.'.$locale)
+                        ->label('Детали')
+                        ->columns()
+                        ->schema([
+                            Forms\Components\TextInput::make('title')
+                                ->label('Заголовок'),
+                            Forms\Components\TextInput::make('description')
+                                ->label('Описание'),
+                        ]),
                 ])),
             ])
             ->columns(1);
