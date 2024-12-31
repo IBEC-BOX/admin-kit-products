@@ -29,6 +29,8 @@ class ProductResource extends Resource
                     Forms\Components\TextInput::make('title.'.$locale)
                         ->label(__('admin-kit-products::products.resource.name'))
                         ->required($locale === app()->getLocale()),
+                    Forms\Components\Textarea::make('short_text.'.$locale)
+                        ->label(__('admin-kit-products::products.resource.short_text')),
                     Forms\Components\RichEditor::make('text.'.$locale)
                         ->label(__('admin-kit-products::products.resource.text')),
                     Forms\Components\SpatieMediaLibraryFileUpload::make('attachments.'.$locale)

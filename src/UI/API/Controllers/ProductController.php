@@ -18,4 +18,11 @@ class ProductController extends Controller
 
         return ProductDTO::collection($products);
     }
+
+    public function show(int $id)
+    {
+        $product = Product::query()->findOrFail($id);
+
+        return ProductDTO::from($product);
+    }
 }

@@ -13,7 +13,8 @@ class ProductDTO extends Data
 
     public function __construct(
         public string $title,
-        public string $text,
+        public ?string $text,
+        public ?string $short_text,
         public ?string $photo,
         public array $details,
         public Collection $attachments,
@@ -24,6 +25,7 @@ class ProductDTO extends Data
         return new self(
             title: $product->title,
             text: $product->text,
+            short_text: $product->short_text,
             photo: $product->photo,
             details: $product->details ?? [],
             attachments: $product->attachments,

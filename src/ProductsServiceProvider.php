@@ -24,6 +24,7 @@ class ProductsServiceProvider extends PackageServiceProvider
             ->hasMigrations([
                 'create_admin_kit_products_table',
                 'add_details_column_in_admin_kit_products_table',
+                'add_short_text_column_in_admin_kit_products_table',
             ])
             ->hasCommand(ProductsCommand::class);
     }

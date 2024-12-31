@@ -9,6 +9,7 @@ return [
         'photo' => 'Photo',
         'name' => 'Name',
         'text' => 'Text',
+        'short_text' => 'Short Text',
         'attachments' => 'Attachments',
 
         'created_at' => 'Created At',
