@@ -12,6 +12,7 @@ class ProductDTO extends Data
     use WithDeprecatedCollectionMethod;
 
     public function __construct(
+        public int $id,
         public string $title,
         public ?string $text,
         public ?string $short_text,
@@ -23,6 +24,7 @@ class ProductDTO extends Data
     public static function fromModel(Product $product): ProductDTO
     {
         return new self(
+            id: $product->id,
             title: $product->title,
             text: $product->text,
             short_text: $product->short_text,
