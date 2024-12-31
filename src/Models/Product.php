@@ -30,6 +30,7 @@ class Product extends AbstractModel implements HasMedia
     protected $fillable = [
         'title',
         'text',
+        'short_text',
         'sort',
         'details',
     ];
@@ -37,6 +38,7 @@ class Product extends AbstractModel implements HasMedia
     protected array $translatable = [
         'title',
         'text',
+        'short_text',
         'details',
     ];
 

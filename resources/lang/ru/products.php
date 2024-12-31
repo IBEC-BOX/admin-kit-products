@@ -9,6 +9,7 @@ return [
         'photo' => 'Фото',
         'name' => 'Название',
         'text' => 'Текст',
+        'short_text' => 'Короткий текст',
         'attachments' => 'Вложения',
 
         'created_at' => 'Создан',
